@@ -1,0 +1,160 @@
+.header {}
+.header__top {
+	padding: 12px 0;
+}
+.header__container {}
+.header__body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header__logo {
+	display: flex;
+	align-items: center;
+}
+.header-logo {}
+.header-logo__image {
+	display: inline-block;
+	margin: 0 27px 0 0;
+}
+.header-logo__label {
+	max-width: 160px;
+	display: inline-block;
+	font-size: 16px;
+	line-height: math.div(20, 16) * 100%;
+	font-weight: 500;
+	color: $textColor;
+}
+.header__main {
+	display: flex;
+}
+.header__address {
+	max-width: 235px;
+	color: #131313;
+	padding: 0 0 0 18px;
+	background: url(../img/icons/point.png) left 1px no-repeat;
+	line-height: 20px;
+	margin: 0 63px 0 0;
+}
+.header__phone {}
+.header-phone {
+	padding: 0 0 0 20px;
+	background: url(../img/icons/phone.png) left 2px no-repeat;
+	margin: 0 40px 0 0;
+}
+.header-phone__link {
+	display: flex;
+	align-items: center;
+	color: $textColor;
+	font-weight: 700;
+	margin: 0 0 6px;
+	transition: all .2s ease 0s;
+	&:hover{
+		color: $lightGreen;
+	}
+}
+.header-phone__sublink {
+	font-size: 14px;
+	color: $textColor;
+}
+.header__button {
+	align-self: center;
+	display: inline-block;
+	background-color: $lightGreen;
+	border-radius: 19px;
+	color: $colorWhite;
+	font-weight: 600;
+	padding: 10px 18px;
+	margin-left: auto;
+	letter-spacing: -0.1px;
+	min-height: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	transition: all .2s ease 0s;
+	&:hover{
+		background: #0d3d22;
+	}
+}
+
+.header__bottom {
+	background: $darkGreen;
+	box-shadow: 0px 11px 21px 0px rgba(0, 0, 0, 0.27);
+}
+.header__menu {}
+.menu__icon{
+	display: none;
+}
+.menu {}
+.menu__list > li {
+	position: relative;
+	cursor: pointer;
+}
+.menu__link {
+	color: #fff;
+	font-size: 13px;
+	cursor: pointer;
+}
+.menu__link:hover {
+	text-decoration: underline;
+}
+.menu__sub-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #fff;
+	padding: 15px;
+	min-width: 200px;
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.27);
+	z-index: 2;
+}
+
+.menu__sub-list li{
+	margin: 0 0 10px;
+}
+.menu__sub-list li:last-child {
+	margin: 0;
+}
+.menu__sub-link {
+	color: #000;
+	cursor: pointer;
+}
+.menu__sub-link:hover {
+	text-decoration: underline;
+}
+.menu__arrow {
+	display: block;
+	background: url('../img/icons/arrow.png') right no-repeat;
+	width: 8px;
+	height: 5px;
+	background-size: 8px 4px;
+	margin: 0 0 0 6px;
+	transition: all .4s ease 0s;
+}
+// pc and touch
+body._pc .menu__list > li:hover .menu__sub-list {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0px, 0px);
+	pointer-events: all;
+	transition: all .2s ease 0s;
+}
+body._touch .menu__list > li._active .menu__sub-list{
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0px, 0px);
+	pointer-events: all;
+}
+body._touch .menu__list > li,
+body._pc .menu__list > li {
+	display: flex;
+	align-items: center;
+}
+body._touch .menu__link {
+	flex: 1 1 auto;
+}
+body._touch .menu__list > li._active .menu__arrow,
+body._pc .menu__list > li:hover .menu__arrow {
+	transform: rotate(180deg);
+}
